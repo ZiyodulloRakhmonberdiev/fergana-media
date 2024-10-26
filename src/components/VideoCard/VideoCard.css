@@ -1,0 +1,294 @@
+@import url("../../assets/variable/variable.css");
+
+.video-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    width: 100%;
+    padding: 20px;
+}
+
+.video-card {
+    background-color: transparent;
+    overflow: hidden;
+    /* width: 100%; */
+    max-width: 350px;
+    width: 100%;
+    height: 450px;
+    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
+    margin: 0 auto;
+    /* border-width: 0px, 2px, 2px, 2px; */
+    /* border-style: solid; */
+    /* border-color: var(--border-color); */
+    position: relative;
+}
+
+/* .video-card-image {
+    width: 100%;
+    height: 279px !important;
+    border: none;
+    display: block;
+    border: Mixed solid var(--border-color);
+    position: relative;
+    border:1px solid red;
+    overflow: hidden;
+} */
+
+.video-card-image {
+    width: 100%;
+    height: 279px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    
+}
+
+.video-card-image img {
+    width: 100%;
+    height: 100% !important;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+.video-card-image a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    text-decoration: none;
+}
+
+.video-card-youtube-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: 60px;
+    z-index: 1;
+}
+
+.video-card-youtube-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+
+.video-card-content {
+    height: 180px;
+    padding:10px;
+    border: 1px solid var(--border-color);
+    border-top: none;
+}
+
+.video-card-date {
+    color: var(--text-lighter);
+    font-size: 14px;
+    margin-bottom: 12px;
+    font-family: 'Lato', sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 14.4px;
+    letter-spacing: 0.01em;
+    text-align: left;
+
+}
+
+.video-card-name {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.video-card-name h1 {
+    font-size: 46px;
+    font-weight: 600;
+    line-height: 51.89px;
+    letter-spacing: 0.01em;
+    text-align: left;
+    color: var(--text-color);
+}
+
+.video-card-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 14px;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 22.56px;
+    letter-spacing: 0.01em;
+    text-align: left;
+    color: var(--text-color);
+    font-family: 'Source Code Pro', sans-serif !important;
+}
+
+.video-card-title:hover {
+    color: var(--anchor-hover);
+    transition: all 0.4s;
+}
+
+.video-card-description {
+    color: var(--text-color);
+    font-size: 16px;
+    line-height: 1.5;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 20px;
+    letter-spacing: 0.01em;
+    text-align: left;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    /* For single-line ellipsis */
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    line-height: 1.5;
+    max-height: calc(3em * 4);
+    white-space: normal;
+
+}
+
+.custom-prev,
+.custom-next {
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+    border-radius: 50%;
+    border: 2px solid var(--text-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.video-card-wrapper {
+    position: relative;
+    width: 100%;
+    padding: 20px;
+}
+
+.swiper-btns {
+    width: 100px;
+    height: 60px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    position: relative;
+    justify-content: space-between;
+    background-color: transparent;
+}
+
+.custom-prev,
+.custom-next {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    background-color: transparent;
+
+}
+
+.custom-prev i,
+.custom-next i {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media (max-width: 1426px) and (min-width: 1080px) {
+    .video-card {
+        max-width: 400px;
+        width: 100%;
+
+    }
+}
+
+
+@media (max-width: 1080px) and (min-width: 800px) {
+    .video-card {
+        max-width: 460px;
+        width: 100%;
+
+    }
+
+    .video-cards {
+        display: flex;
+        gap: 10px;
+    }
+}
+
+@media (max-width: 730px) and (min-width: 330px) {
+    .video-card {
+        max-width: 700px;
+        width: 100%;
+
+    }
+
+    .video-cards {
+        display: flex;
+        gap: 10px;
+    }
+}
+
+.video-detailed-button-wrapper {
+    width: 116px;
+    height: 43px;
+    position: absolute;
+    bottom: 7px;
+    left: 20px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.video-detailed-button {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px dashed var(--text-color);
+    border-radius: 50px;
+    text-decoration: none;
+    color: var(--text-color);
+    background-color: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: Lato;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 19.2px;
+    letter-spacing: 0.01em;
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+
+}
+
+.video-detailed-button:hover {
+    background-color: var(--text-active);
+    color: var(--primary-color);
+    border: 1px solid transparent;
+    transition: all 0.7s ease;
+}
+
+.video-detailed-arrow span {
+    font-weight: bold;
+    font-size: 24px;
+    transition: margin-left 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.video-detailed-button:hover .arrow {
+    margin-left: 5px;
+}

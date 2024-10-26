@@ -1,0 +1,133 @@
+.modal-overlays {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(63, 62, 62, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-contents {
+    background: var(--primary-color);
+    padding: 20px;
+    border-radius: 8px;
+    position: relative;
+    width: 80%;
+    max-width: 700px;
+    min-height: 60vh;
+}
+
+@media (max-width: 650px) {
+    .modal-contents {
+        width: 90%;
+    }
+}
+
+.close-modal-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: var(--text-active);
+    color: var(--primary-color);
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.modal-contents .iframe-wrapper {
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+}
+
+.modal-contents iframe {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.modal-contents h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: var(--text-color);
+    margin-top: 10px;
+}
+
+.modal-contents p {
+    font-size: 16px;
+    color: var(--text-color);
+    margin-top: 10px;
+}
+
+.modal-contents .button {
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 16px;
+    border: 2px solid transparent;
+    background-color: transparent;
+    color: var(--text-color);
+    border-radius: 50px;
+    position: relative;
+    overflow: hidden;
+    font-size: 16px;
+    text-decoration: none;
+    transition: all 0.4s ease;
+    margin-top: 10px;
+}
+
+.modal-contents .button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background-color: var(--text-active);
+    z-index: 0;
+    transition: width 0.3s ease;
+}
+
+.modal-contents .button:hover::before {
+    width: 100%;
+}
+
+.modal-contents .button span {
+    margin-left: 10px;
+    position: relative;
+    z-index: 1;
+    background-color: transparent;
+    padding: 5px 10px;
+    font-size: 16px;
+}
+
+.modal-contents .button:hover {
+    color: var(--primary-color);
+    background-color: transparent;
+}
+
+.modal-contents .button:hover span {
+    opacity: 1;
+}
+
+.modal-contents .arrow {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-right: 2px solid currentColor;
+    border-bottom: 2px solid currentColor;
+    transform: rotate(-45deg);
+    transition: all 0.2s ease;
+    position: relative;
+    z-index: 1;
+}
+
+.modal-contents .button:hover .arrow {
+    background-color: transparent;
+    transform: translateX(5px) rotate(-45deg);
+}

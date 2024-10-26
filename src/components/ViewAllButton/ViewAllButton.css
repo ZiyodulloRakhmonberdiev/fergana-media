@@ -1,0 +1,27 @@
+.view-all-button {
+    background-color: transparent;
+    color: var(--text-color);
+    font-family: Lato;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 19.2px;
+    letter-spacing: 0.01em;
+    text-align: left;
+    border: 1px solid var(--text-color);
+    padding: 10px 25px;
+    cursor: pointer;
+    border-radius: 30px;
+    display: inline-flex;
+    align-items: center;
+    transition: all 0.3s ease;
+    gap: 10px;
+}
+
+.view-all-button:hover {
+    background-color: #f1f1f1;
+}
+
+.view-all-button .arrow {
+    margin-left: 10px;
+    transition: margin-left 0.3s ease;
+}
