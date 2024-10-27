@@ -97,7 +97,7 @@ const VideoCard = ({ data, category, loading }) => {
       case "en":
         return item?.[`${field}_en_us`] || item?.[field];
       case "uz-cyrl":
-        return item?.[`${field}_uz_Cyrl`] || item?.[field];
+        return item?.[`${field}_cyrl`] || item?.[field];
       case "ru":
         return item?.[`${field}_ru`] || item?.[field];
       default:
