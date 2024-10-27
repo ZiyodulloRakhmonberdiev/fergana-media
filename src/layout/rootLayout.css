@@ -18,8 +18,6 @@ header {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    /* background-color: var(--primary-color); */
-    /* background-color: #121212; */
 }
 
 .header.hidden {
@@ -31,7 +29,6 @@ header .header-top {
     display: flex;
     align-items: center;
     justify-content: center;
-    /* background-color: var(--text-active); */
     height: 60px;
     background: #121212;
 }
@@ -74,6 +71,9 @@ header .header-top .container {
     .globus{
         width: 18px;
     }
+    .header-top  .container .logo img{
+        margin-left: -23px;
+    }
 }
 
 .language .language-selector {
@@ -86,11 +86,13 @@ header .header-top .container {
 }
 .language-selector span{
     font-size: 18px;
+    cursor: pointer;
 }
 
 .language .language-selector {
     font-size: var(--primary-text-size);
     color: white;
+    padding-right: 5px;
 }
 
 .language i {
@@ -153,25 +155,20 @@ header .header-top .container {
     display: flex;
     justify-content: center;
     height: 50px;
-}
-.header-main {
     background-color: #fff;
     border-top: none;
 }
+
 .header-main .container {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding-left: 5px;
 }
 
 nav {
     display: flex;
     align-items: center;
     justify-content: center;
-    /* margin: 0 auto; */
-    /* width: 100%; */
-    /* margin: 0 20px; */
 }
 
 .nav-items {
@@ -472,40 +469,30 @@ footer .bottom a {
         white-space: nowrap;
     }
 
-    .header-top {
-        height: 50px !important;
+    .header-top .language-selector .container {
+        padding-left: 0 !important;
+    }
+    .header-top .language-selector{
+        gap: 8px;
+    }
+    .header-top .language-selector span{
+        font-size: 16px;
     }
 
     .header-top .hamburger-menu {
         display: flex;
     }
 
-    /* .header-main {
-        display: none;
-    } */
-
     .responsive-search {
         display: flex;
     }
 
-    /* header .language img {
-        display: none !important;
-    } */
-
-    /* header .language-selector {
-        display: none !important;
-    } */
-
     .header-main {
-        padding: 0 5px;
+        padding: 0 10px;
     }
 
     .header-main .container {
-        gap: 20px;
-    }
-
-    .header-top .logo a {
-        margin-left: -20px;
+        gap: 15px;
     }
 
     .header-main .container nav {

@@ -56,20 +56,28 @@
 @media (max-width: 1440px) {
     .article-container {
         width: 100%;
-        margin-top: 150px;
+        margin-top: 120px;
     }
 }
 
 @media (max-width: 990px) {
     .article-container {
         width: 100%;
-        margin-top: 150px;
+        margin-top: 100px;
         padding: 20px !important;
     }
 }
 @media (max-width: 768px) {
     .article-container {
         width: 100%;
-        margin-top: 120px;
+        margin-top: 90px;
+    }
+    .article-header{
+        line-height: 24px;
+        font-size: 16px;
+    }
+    .article-title{
+        line-height: 24px;
+        font-size: 16px;
     }
 }

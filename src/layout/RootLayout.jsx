@@ -117,6 +117,8 @@ function RootLayout() {
         return item.title_en_us || item.title;
       case "uz-latn":
         return item.title_uz_Latn || item.title;
+      case "uz-cyrl":
+        return item.title_uz_Cyrl || item.title;
       case "ru":
         return item.title_ru || item.title;
       default:
@@ -137,7 +139,6 @@ function RootLayout() {
     })) || []),
   ];
 
-  
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
@@ -166,31 +167,32 @@ function RootLayout() {
             </div>
             <div className="logo-center">{/* <p>Fergana Media</p> */}</div>
             <div className="language">
-            <div className="search">
-              <i
-                className="fa-solid fa-magnifying-glass"
-                onClick={toggleSearch}
-              ></i>
-            </div>
-              {/* <img src={images.globe} alt="globe icon" className="globus" /> */}
-              {/* {selectedLanguage && (
-                <span className="selected-language">
-                  {selectedLanguage}
-                </span>
-              )} */}
-               <div className="language-selector">
-                <span onClick={() => changeLanguage("uz-latn")}>
-                  {t("UZ")}
-                </span>
-                <span onClick={() => changeLanguage("uz-cyrl")}>
-                  {t("УЗ")}
-                </span>
-                <span onClick={() => changeLanguage("en")}>
-                  {t("ENG")}
-                </span>
-                <span onClick={() => changeLanguage("ru")}>
-                  {t("РУ")}
-                </span>
+              <div className="search">
+                <i
+                  className="fa-solid fa-magnifying-glass"
+                  onClick={toggleSearch}
+                ></i>
+              </div>
+              <div className="language-selector">
+                {["uz-latn", "uz-cyrl", "en", "ru"].map((lang) => (
+                  <span
+                    key={lang}
+                    onClick={() => changeLanguage(lang)}
+                    style={{
+                      display: selectedLanguage === lang ? "none" : "block",
+                    }}
+                  >
+                    {t(
+                      lang === "uz-latn"
+                        ? "UZ"
+                        : lang === "uz-cyrl"
+                        ? "УЗ"
+                        : lang === "en"
+                        ? "EN"
+                        : "РУ"
+                    )}
+                  </span>
+                ))}
               </div>
 
               {/* <div className="hamburger-menu">
