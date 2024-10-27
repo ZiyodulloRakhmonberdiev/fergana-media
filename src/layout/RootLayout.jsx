@@ -205,6 +205,32 @@ function RootLayout() {
             </div>
           </div>
         </div>
+        <div className="header-middle-social">
+          <div className="header-top-social">
+            <a href="">
+              <i className="fab fa-instagram"></i>
+            </a>
+            <a href="">
+              <i className="fab fa-telegram"></i>
+            </a>
+            <a href="">
+              <i className="fab fa-facebook"></i>
+            </a>
+            <a href="">
+              <i className="fab fa-youtube"></i>
+            </a>
+          </div>
+          <div className="dark-mode-toggle">
+            <i
+              className="fa-solid fa-magnifying-glass"
+              onClick={toggleSearch}
+            ></i>
+            <i
+              onClick={toggleTheme}
+              className={`fa-regular fa-${isDarkMode ? "moon" : "sun"}`}
+            ></i>
+          </div>
+        </div>
         <div className="header-main">
           <div className="container">
             <nav>
@@ -228,10 +254,24 @@ function RootLayout() {
               </ul>
             </nav>
             <div className="header-right-items">
+              <div className="header-top-social">
+                <a href="">
+                  <i className="fab fa-instagram"></i>
+                </a>
+                <a href="">
+                  <i className="fab fa-telegram"></i>
+                </a>
+                <a href="">
+                  <i className="fab fa-facebook"></i>
+                </a>
+                <a href="">
+                  <i className="fab fa-youtube"></i>
+                </a>
+              </div>
               <div className="dark-mode-toggle">
                 <i
-                  onClick={toggleTheme}
-                  className={`fa-regular fa-${isDarkMode ? "moon" : "sun"}`}
+                  className="fa-solid fa-magnifying-glass"
+                  onClick={toggleSearch}
                 ></i>
               </div>
             </div>

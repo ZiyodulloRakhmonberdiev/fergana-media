@@ -47,7 +47,56 @@ header .header-top .container {
     text-transform: uppercase;
     letter-spacing: 1px;
 }
+.header-middle-social{
+    padding: 10px;
+    display: none;
+}
+.header-top-social{
+    display: flex;
+    gap: 15px;
+    margin-right: 10px;
+}
 
+.dark-mode-toggle .fa-magnifying-glass{
+    display: none;
+}
+@media (max-width:912px){
+    .header-top{
+        background: red !important;
+        height: 40px !important;
+    }
+    .language .search{
+        display: none;
+    }
+    .header-right-items{
+        display: none !important;
+    }
+    .dark-mode-toggle{
+        display: flex;
+        gap: 10px;
+        align-items: center;
+    }
+    .dark-mode-toggle .fa-magnifying-glass{
+        display: block !important;
+        color: #fff !important;
+    }
+    .header-middle-social{
+        background: #121212 !important;
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+    }
+    .header-middle-social i{
+        color: #fff !important;
+        font-size: 16px !important;
+    }
+
+}
+
+.header-top-social a i{
+    font-size: 18px;
+    color: #121212;
+}
 .language {
     display: flex;
     align-items: center;
@@ -242,7 +291,7 @@ nav ul li.active a::before { /* Show the border on hover, active, and when li is
 }
 
 .dark-mode-toggle i {
-    width: 30px;
+    /* width: 30px; */
     color: #121212;
     font-size: var(--primary-text-size);
     display: flex;
