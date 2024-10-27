@@ -72,7 +72,7 @@ header .header-top .container {
         display: block;
     }
     .header-top{
-        background: red !important;
+        background: var(--text-active) !important;
         height: 40px !important;
     }
     .language .search{
@@ -135,8 +135,9 @@ header .header-top .container {
         width: 110px;
     }
     .logo-center p{
-        font-size: 12px !important;
+        font-size: 10px !important;
         margin-left: -28px;
+        font-family: 'Acumin', sans-serif;
     }
 }
 

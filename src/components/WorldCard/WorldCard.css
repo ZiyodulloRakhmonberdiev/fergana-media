@@ -5,30 +5,31 @@
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
     width: 100%;
-    padding: 20px;
 }
 
 .world-card {
     background-color: transparent;
     overflow: hidden;
-    /* width: 100%; */
     max-width: 350px;
     width: 100%;
     min-height: 500px;
     max-height: 550px;
-    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
     margin: 0 auto;
-    /* border-width: 0px, 2px, 2px, 2px; */
-    /* border-style: solid; */
-    /* border-color: var(--border-color); */
     position: relative;
 }
-
 .swiper-slide {
+    margin-bottom: 20px;
+    margin-top: 20px;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: 0.3s ease;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.swiper-slide:hover{
+    /* box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; */
 }
 
 .world-card-image {
@@ -36,7 +37,6 @@
     height: 279px;
     border: none;
     display: block;
-    border: Mixed solid var(--border-color);
 }
 
 .world-card-image img {
@@ -49,15 +49,14 @@
 .world-card-content {
     height: 230px;
     padding: 10px;
-    border: 1px solid var(--border-color);
     border-top: none;
     display: flex;
     flex-direction: column;
     scrollbar-width: none;
     -ms-overflow-style: none;
     overflow: auto;
-
 }
+
 
 .world-card-content::-webkit-scrollbar {
     display: none;
@@ -110,7 +109,7 @@
 
 .world-card-title:hover {
     color: var(--anchor-hover);
-    transition: all 0.5s;
+    transition: all 0.3s;
 }
 
 .world-card-description {
@@ -118,7 +117,7 @@
     font-size: 16px;
     line-height: 1.2;
     font-size: 16px;
-    font-weight: 500;
+    font-weight: 600;
     line-height: 20px;
     letter-spacing: 0.01em;
     text-align: left;

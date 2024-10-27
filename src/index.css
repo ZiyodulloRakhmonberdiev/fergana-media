@@ -1,59 +1,66 @@
 @import url(https://fonts.googleapis.com/css2?family=Lato:wght@100;200;300;400;500;600;800;900&display=swap);
-@import url('../src/assets/variable/variable.css');
+@import url("../src/assets/variable/variable.css");
 @import url(https://fonts.googleapis.com/css?family=Bebas+Neue:regular);
 @import url(https://fonts.googleapis.com/css?family=Oswald:200,300,regular,500,600,700);
 @import url(https://fonts.googleapis.com/css?family=Source+Code+Pro:200,300,regular,500,600,700,800,900,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic);
 @import url(https://fonts.googleapis.com/css?family=Lora:regular,500,600,700,italic,500italic,600italic,700italic);
+
+@font-face {
+  font-family: "Acumin";
+  src: url("../public/fonts/acumin.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: 'Lato', sans-serif;
-    background-color: var(--background);
-    font-family: 'Source Code Pro', sans-serif;
+  font-family: "Lato", sans-serif;
+  background-color: var(--background);
+  font-family: "Source Code Pro", sans-serif;
 }
 
 .container {
-    width: 100%;
-    max-width: 1500px !important;
-    margin: 0 20px;
+  width: 100%;
+  max-width: 1500px !important;
+  margin: 0 20px;
 }
 
 .world-card-wrapper {
-    width: 100%;
-    max-width: 1500px !important;
-    margin: 0 auto;
+  width: 100%;
+  max-width: 1500px !important;
+  margin: 0 auto;
 }
 
 .video-card-wrapper {
-    width: 100%;
-    max-width: 1500px !important;
-    margin: 0 auto;
+  width: 100%;
+  max-width: 1500px !important;
+  margin: 0 auto;
 }
 
-i, button {
-    cursor: pointer;
+i,
+button {
+  cursor: pointer;
 }
 
 a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
-
-
 @media (max-width: 480px) {
-    .container {
-        margin: 0 5px;
-        padding: 0 5px;
-    }
-    h1{
-        font-size: 24px !important;
-    }
-    .swiper-btns{
-        width: 88px;
-        gap: 12px;
-     }
+  .container {
+    margin: 0 5px;
+    padding: 0 5px;
+  }
+  h1 {
+    font-size: 24px !important;
+  }
+  .swiper-btns {
+    width: 88px;
+    gap: 12px;
+  }
 }

@@ -9,30 +9,15 @@
 }
 
 .video-card {
-  background-color: transparent;
+  background-color: #fff;
   overflow: hidden;
-  /* width: 100%; */
   max-width: 350px;
   width: 100%;
-  height: 450px;
+  /* height: 450px; */
   /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
   margin: 0 auto;
-  /* border-width: 0px, 2px, 2px, 2px; */
-  /* border-style: solid; */
-  /* border-color: var(--border-color); */
   position: relative;
 }
-
-/* .video-card-image {
-    width: 100%;
-    height: 279px !important;
-    border: none;
-    display: block;
-    border: Mixed solid var(--border-color);
-    position: relative;
-    border:1px solid red;
-    overflow: hidden;
-} */
 
 .video-card-image {
   width: 100%;
@@ -74,9 +59,9 @@
 }
 
 .video-card-content {
-  height: 180px;
+  min-height: 200px;
   padding: 10px;
-  border: 1px solid var(--border-color);
+  padding-bottom: 15px;
   border-top: none;
 }
 
@@ -132,7 +117,7 @@
   font-size: 16px;
   line-height: 1.5;
   font-size: 16px;
-  font-weight: 300;
+  font-weight: 500;
   line-height: 20px;
   letter-spacing: 0.01em;
   text-align: left;

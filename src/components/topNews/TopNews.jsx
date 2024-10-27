@@ -18,6 +18,15 @@ function TopNews() {
   const bottomNews = data?.results?.slice(2, 5);
   const sideNews = data?.results?.slice(5, 8);
 
+  const formDate = (dateString) => {
+    const date = new Date(dateString);
+    const day = date.getDate();
+    const year = date.getFullYear();
+    const months = i18n.t("months", { returnObjects: true });
+    const month = months[date.getMonth()];
+    return `${day} ${month} ${year}`;
+  };
+
   const getTitleByLanguage = (item) => {
     switch (i18n.language) {
       case "en":
@@ -34,7 +43,7 @@ function TopNews() {
   return (
     <div className="top-news-wrap">
       <div className="container">
-        <h1 className="title">{t('Top yangiliklar')}</h1>
+        <h1 className="title">{t("Top yangiliklar")}</h1>
         <div className="news-layout">
           <div className="main-news-wrapper">
             <div className="top-news">
@@ -48,13 +57,14 @@ function TopNews() {
                       />
                     </div>
                     <div className="news-info">
+                      <div className="category">
+                        <span>{formDate(news.created_at)}</span>
+                      </div>
                       <Link to={`/news/${news.id}?type=world`}>
                         {getTitleByLanguage(news)}
                       </Link>
                       <p className="description">
-                        {getTitleByLanguage(
-                          news
-                        )}
+                        {getTitleByLanguage(news)}
                         ...
                       </p>
                     </div>
@@ -72,19 +82,14 @@ function TopNews() {
                     />
                   </div>
                   <div className="news-info">
-                    {/* <div className='category'>
-                                            <p>{news.category}</p>
-                                            <span>{news.date}</span>
-                                        </div> */}
+                    <div className="category">
+                      <span>{formDate(news.created_at)}</span>
+                    </div>
                     <Link to={`/news/${news.id}?type=world`}>
-                      {getTitleByLanguage(
-                        news
-                      )}
+                      {getTitleByLanguage(news)}
                     </Link>
                     <p className="description">
-                      {getTitleByLanguage(
-                        news
-                      )}
+                      {getTitleByLanguage(news)}
                       ...
                     </p>
                   </div>
@@ -92,7 +97,6 @@ function TopNews() {
               ))}
             </div>
           </div>
-
 
           <aside className="side-news">
             {sideNews?.map((news, index) => (
@@ -104,10 +108,10 @@ function TopNews() {
                   />
                 </div>
                 <div className="news-info">
-                  {/* <div className='category'>
-                                        <p>{news.category}</p>
-                                        <span>{news.date}</span>
-                                    </div> */}
+                  <div className="category">
+                    {/* <p>{news.category}</p> */}
+                    <span>{formDate(news.created_at)}</span>
+                  </div>
                   <Link to={`/news/${news.id}?type=world`}>
                     {getTitleByLanguage(news)}
                   </Link>
