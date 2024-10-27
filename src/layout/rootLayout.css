@@ -60,7 +60,17 @@ header .header-top .container {
 .dark-mode-toggle .fa-magnifying-glass{
     display: none;
 }
+
+.only-mobile{
+    display: none;
+}
 @media (max-width:912px){
+    .only-desktop{
+        display: none;
+    }
+    .only-mobile{
+        display: block;
+    }
     .header-top{
         background: red !important;
         height: 40px !important;
@@ -122,6 +132,11 @@ header .header-top .container {
     }
     .header-top  .container .logo img{
         margin-left: -23px;
+        width: 110px;
+    }
+    .logo-center p{
+        font-size: 12px !important;
+        margin-left: -28px;
     }
 }
 

@@ -162,10 +162,11 @@ function RootLayout() {
           <div className="container">
             <div className="logo">
               <NavLink to="/">
-                <img width={150} src={images.img9901} alt="logo" />
+                <img width={150} src={images.logoLight} alt="logo" className="only-desktop" />
+                <img width={150} src={images.img9901} className="only-mobile" alt="logo" />
               </NavLink>
             </div>
-            <div className="logo-center">{/* <p>Fergana Media</p> */}</div>
+            <div className="logo-center"> <p>Fergana Media</p> </div>
             <div className="language">
               <div className="search">
                 <i
@@ -174,7 +175,7 @@ function RootLayout() {
                 ></i>
               </div>
               <div className="language-selector">
-                {["uz-latn", "uz-cyrl", "en", "ru"].map((lang) => (
+                {["uz-latn", "en", "ru"].map((lang) => (
                   <span
                     key={lang}
                     onClick={() => changeLanguage(lang)}
@@ -185,8 +186,6 @@ function RootLayout() {
                     {t(
                       lang === "uz-latn"
                         ? "UZ"
-                        : lang === "uz-cyrl"
-                        ? "УЗ"
                         : lang === "en"
                         ? "EN"
                         : "РУ"

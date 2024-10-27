@@ -18,7 +18,7 @@ function RoutesWrap() {
           <Route index element={<Home />} />
           <Route path="/news/:id" element={<News />} />
           <Route path="/category/:categoryId" element={<CategoryPage />} />
-          <Route path="*" element={<PageNotFound />} />
+          <Route path="*" element={<Home />} />
         </Route>
       </>
     )
