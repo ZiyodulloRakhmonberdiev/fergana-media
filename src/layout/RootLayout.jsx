@@ -304,7 +304,7 @@ function RootLayout() {
                 <li>
                   {t("Manzil")}: {t("Toshkent shaxar, Guliston")}
                 </li>
-                <li>{t("email")}: Ferganamedia@gmail.uz</li>
+                <li>{t("email")}: ferganamedia@gmail.uz</li>
                 <li>{t("phone")}: +998 (93) 123-45-67</li>
               </ul>
             </div>
