@@ -297,22 +297,21 @@ nav ul li.active a::before { /* Show the border on hover, active, and when li is
 
 
 .header-main .search {    height: inherit;
-    /* width: 30px; */
     font-size: var(--primary-text-size);
-    /* border-left: 1px solid var(--border-color); */
-    /* padding: 16px; */
-    /* padding-left: 33px; */
     color: #fff !important;
     z-index: 10;
 }
 
 .dark-mode-toggle i {
-    /* width: 30px; */
     color: #121212;
     font-size: var(--primary-text-size);
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.header-top-social i:hover {
+    transform: scale(1.1);
 }
 
 .fa-moon {
@@ -381,7 +380,10 @@ footer .container .items .item .social-networks {
 
 footer .container .items .item .social-networks i {
     font-size: 18px;
-    color: var(--text-color);
+}
+
+footer .container .items .item .social-networks i:hover{
+    transform: scale(1.1);
 }
 
 footer .container .items .item .title {

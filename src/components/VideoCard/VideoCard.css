@@ -13,8 +13,6 @@
   overflow: hidden;
   max-width: 350px;
   width: 100%;
-  /* height: 450px; */
-  /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
   margin: 0 auto;
   position: relative;
 }
@@ -69,7 +67,6 @@
   color: var(--text-lighter);
   font-size: 14px;
   margin-bottom: 12px;
-  font-family: "Lato", sans-serif;
   font-size: 12px;
   font-weight: 500;
   line-height: 14.4px;
@@ -104,7 +101,6 @@
   letter-spacing: 0.01em;
   text-align: left;
   color: var(--text-color);
-  font-family: "Source Code Pro", sans-serif !important;
 }
 
 .video-card-title:hover {
@@ -133,20 +129,6 @@
   white-space: normal;
 }
 
-.custom-prev,
-.custom-next {
-  width: 50px;
-  height: 50px;
-  background-color: transparent;
-  border-radius: 50%;
-  border: 2px solid var(--text-color);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  cursor: pointer;
-  z-index: 10;
-}
-
 .video-card-wrapper {
   position: relative;
   width: 100%;
@@ -166,6 +148,9 @@
 
 .custom-prev,
 .custom-next {
+  border-radius: 50%;
+  border: 2px solid var(--text-color);
+  z-index: 10;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -175,12 +160,27 @@
   background-color: transparent;
 }
 
+.custom-prev:hover,
+.custom-next:hover{
+  border: 2px solid var(--text-active);
+}
+
+.custom-prev:hover i,
+.custom-next:hover i{
+  color: var(--text-active);
+}
+
 .custom-prev i,
 .custom-next i {
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.custom-prev i:hover,
+.custom-next i:hover{
+  color: var(--text-active);
 }
 
 @media (max-width: 1426px) and (min-width: 1080px) {
@@ -240,7 +240,6 @@
   background-color: transparent;
   cursor: pointer;
   transition: all 0.3s ease;
-  font-family: Lato;
   font-size: 16px;
   font-weight: 500;
   line-height: 19.2px;
