@@ -24,7 +24,43 @@
   overflow: hidden;
   display: flex;
 }
+.video-card-image button {
+  position: relative;
+}
 
+.video-card-youtube-icon {
+  width: 70px; /* Divning kengligi */
+  height: 70px; /* Divning balandligi */
+  background-color: red; /* Fond rangi */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%; /* Yuqoridan pastga yumshaq burchaklar */
+  animation: pulse 1.5s infinite; /* Animatsiya */
+  position: absolute !important;
+  top: 35% !important;
+  left: 40% !important;
+  transform: translate(-50%, -50%);
+}
+
+.play-button {
+  width: 20px; /* Play tugmasining kengligi */
+  height: 20px; /* Play tugmasining balandligi */
+  border-left: 16px solid white; /* Oq o'ng tomoni */
+  border-top: 10px solid transparent; /* Yuqori burchak */
+  border-bottom: 10px solid transparent; /* Pastki burchak */
+  position: relative;
+  transform: translateX(3px);
+}
+
+@keyframes pulse {
+  0%, 100% {
+      transform: scale(1); /* Boshlanish va tugash holati */
+  }
+  50% {
+      transform: scale(1.1); /* O'rtada kattalashadi */
+  }
+}
 .video-card-image img {
   width: 100%;
   height: 100% !important;
@@ -39,7 +75,7 @@
   position: relative;
   text-decoration: none;
 }
-
+/* 
 .video-card-youtube-icon {
   position: absolute;
   top: 50%;
@@ -48,13 +84,8 @@
   width: 60px;
   height: 60px;
   z-index: 1;
-}
+} */
 
-.video-card-youtube-icon img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-}
 
 .video-card-content {
   min-height: 200px;
@@ -161,12 +192,12 @@
 }
 
 .custom-prev:hover,
-.custom-next:hover{
+.custom-next:hover {
   border: 2px solid var(--text-active);
 }
 
 .custom-prev:hover i,
-.custom-next:hover i{
+.custom-next:hover i {
   color: var(--text-active);
 }
 
@@ -179,7 +210,7 @@
 }
 
 .custom-prev i:hover,
-.custom-next i:hover{
+.custom-next i:hover {
   color: var(--text-active);
 }
 

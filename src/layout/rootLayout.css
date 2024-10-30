@@ -57,6 +57,18 @@ header .header-top .container {
     margin-right: 10px;
 }
 
+.header-top-social a{
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 50%;
+    transition: all 1s ease;
+}
+
+.header-top-social a:hover{
+    transform: scale(1.4);
+    transform: rotateX(360deg);
+}
+
 .dark-mode-toggle .fa-magnifying-glass{
     display: none;
 }
@@ -376,6 +388,11 @@ footer .container .items .item .social-networks {
     display: flex;
     align-items: center;
     gap: 10px;
+}
+
+.header-top-social a:hover{
+    transform: scale(1.4);
+    transform: rotateX(360deg);
 }
 
 footer .container .items .item .social-networks i {

@@ -11,10 +11,10 @@ import SkeletonContent from "../SkeletonContent/SkeletonContent";
 import Modal from "../Modal/Modal";
 import { useTranslation } from "react-i18next";
 // Import Swiper styles
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-import 'swiper/css/scrollbar';
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css/scrollbar";
 
 const VideoCard = ({ data, category, loading }) => {
   const { t, i18n } = useTranslation();
@@ -22,7 +22,7 @@ const VideoCard = ({ data, category, loading }) => {
   const [selectedVideoTitle, setSelectedVideoTitle] = useState("");
   const [selectedVideoDescription, setSelectedVideoDescription] = useState("");
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [itemId, setItemId] = useState(null)
+  const [itemId, setItemId] = useState(null);
 
   const prevRef = useRef(null);
   const nextRef = useRef(null);
@@ -50,7 +50,7 @@ const VideoCard = ({ data, category, loading }) => {
       setSelectedVideoUrl(embedUrl);
       setSelectedVideoTitle(title);
       setSelectedVideoDescription(intro);
-      setItemId(id)
+      setItemId(id);
       setIsModalOpen(true);
     } else {
       console.error("Invalid YouTube URL");
@@ -121,7 +121,6 @@ const VideoCard = ({ data, category, loading }) => {
 
       {loading && <SkeletonContent />}
 
-
       {!loading && Array.isArray(data?.results) && data.results.length > 0 && (
         <Swiper
           spaceBetween={20}
@@ -166,7 +165,7 @@ const VideoCard = ({ data, category, loading }) => {
             const videoThumbnail = getYouTubeThumbnail(item.url);
             const cover = item.cover || videoThumbnail;
             console.log(item);
-            
+
             return (
               <SwiperSlide key={item.id}>
                 <div className="video-card">
@@ -200,13 +199,8 @@ const VideoCard = ({ data, category, loading }) => {
                           }}
                         />
                       )}
-                      <div className="video-card-youtube-icon">
-                        <img
-                          width={30}
-                          height={30}
-                          src={images.youtube_icon}
-                          alt="play"
-                        />
+                      <div class="video-card-youtube-icon">
+                        <div class="play-button"></div>
                       </div>
                     </button>
                   </div>

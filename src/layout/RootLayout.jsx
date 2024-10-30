@@ -207,13 +207,13 @@ function RootLayout() {
         <div className="header-middle-social">
           <div className="header-top-social">
             <a href="">
-              <i className="fab fa-instagram"></i>
+              <i className="fa-brands fa-instagram"></i>
             </a>
             <a href="">
-              <i className="fab fa-telegram"></i>
+              <i className="fa-brands fa-telegram"></i>
             </a>
             <a href="">
-              <i className="fab fa-facebook"></i>
+              <i className="fa-brands fa-facebook"></i>
             </a>
             <a href="">
               <i className="fab fa-youtube"></i>
@@ -292,10 +292,20 @@ function RootLayout() {
               />
               <p>{t("Yangiliklarimiz xalq uchun")}</p>
               <div className="social-networks">
-                <i className="fab fa-instagram"></i>
-                <i className="fab fa-telegram"></i>
-                <i className="fab fa-facebook"></i>
-                <i className="fab fa-youtube"></i>
+              <div className="header-top-social">
+                <a href="">
+                  <i className="fab fa-instagram"></i>
+                </a>
+                <a href="">
+                  <i className="fab fa-telegram"></i>
+                </a>
+                <a href="">
+                  <i className="fab fa-facebook"></i>
+                </a>
+                <a href="">
+                  <i className="fab fa-youtube"></i>
+                </a>
+              </div>
               </div>
             </div>
             <div className="item">
