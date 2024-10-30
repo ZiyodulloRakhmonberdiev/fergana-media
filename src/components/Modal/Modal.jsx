@@ -32,8 +32,8 @@ const Modal = ({ videoUrl, title, description, isOpen, onClose, id }) => {
         </div>
         <h2>{title}</h2>
         <p>{truncateTitle(description)}</p>
-        <Link to={`/news/${id}?type=video`} class="button">
-          <div class="arrow"></div>
+        <Link to={`/news/${id}?type=video`} className="button">
+          <div className="arrow"></div>
           <span>{t("Maqolani o'qish")}</span>
         </Link>
       </div>

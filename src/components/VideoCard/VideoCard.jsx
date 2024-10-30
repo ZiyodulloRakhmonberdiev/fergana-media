@@ -164,7 +164,6 @@ const VideoCard = ({ data, category, loading }) => {
           {data?.results.map((item) => {
             const videoThumbnail = getYouTubeThumbnail(item.url);
             const cover = item.cover || videoThumbnail;
-            console.log(item);
 
             return (
               <SwiperSlide key={item.id}>
@@ -199,8 +198,8 @@ const VideoCard = ({ data, category, loading }) => {
                           }}
                         />
                       )}
-                      <div class="video-card-youtube-icon">
-                        <div class="play-button"></div>
+                      <div className="video-card-youtube-icon">
+                        <div className="play-button"></div>
                       </div>
                     </button>
                   </div>

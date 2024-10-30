@@ -47,6 +47,9 @@ const NewsCard = ({ data, type }) => {
     ?.sort(() => Math.random() - 0.5)
     .slice(0, 6);
 
+    console.log(randomSixNews);
+    
+
     const getTitleByLanguage = (item) => {
       switch (i18n.language) {
         case "en":
