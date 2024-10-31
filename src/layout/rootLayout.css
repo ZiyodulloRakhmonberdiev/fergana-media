@@ -20,9 +20,9 @@ header {
   flex-direction: column;
 }
 
-.header.hidden {
+/* .header.hidden {
   transform: translateY(-100%);
-}
+} */
 
 header .header-top {
   width: 100%;
@@ -39,12 +39,26 @@ header .header-top .container {
   justify-content: space-between;
 }
 
+@keyframes spin {
+  0% {
+    transform: perspective(400px) rotateY(0deg);
+  }
+  50% {
+    transform: perspective(400px) rotateY(180deg);
+  }
+  100% {
+    transform: perspective(400px) rotateY(360deg);
+  }
+}
+
 .header-top .logo-center {
   font-weight: 800;
   font-size: 20px;
   color: white;
   text-transform: uppercase;
   letter-spacing: 1px;
+  display: inline-block;
+  animation: spin 10s linear infinite;
 }
 .header-middle-social {
   padding: 10px;
@@ -53,14 +67,13 @@ header .header-top .container {
 .header-top-social {
   display: flex;
   gap: 15px;
-  margin-right: 10px;
+  /* margin-right: 10px; */
 }
 
 .header-top-social a {
   padding: 8px;
   padding-left: 10px;
   padding-right: 10px;
-  border: 1px solid #ddd;
   border-radius: 50%;
   transition: all 1s ease;
 }
@@ -68,6 +81,24 @@ header .header-top .container {
 .header-top-social a:hover {
   transform: scale(1.4);
   transform: rotateX(360deg);
+}
+
+.header-top-social a img {
+  width: 14px;
+  height: 14px;
+}
+
+.header-top-social .ins {
+  border: 1px solid #a32aa3;
+}
+.header-top-social .tg {
+  border: 1px solid #1788f2;
+}
+.header-top-social .yt {
+  border: 1px solid #ff0000;
+}
+.header-top-social .fb {
+  border: 1px solid #1877f2;
 }
 
 .dark-mode-toggle .fa-magnifying-glass {
@@ -109,16 +140,8 @@ header .header-top .container {
     justify-content: space-between;
     width: 100%;
   }
-  .header-middle-social i {
-    color: #fff !important;
-    font-size: 16px !important;
-  }
 }
 
-.header-top-social a i {
-  font-size: 18px;
-  color: #121212;
-}
 .language {
   display: flex;
   align-items: center;
@@ -264,12 +287,12 @@ nav ul {
 
 nav ul li {
   list-style: none;
-  position: relative; /* Relative positioning for the pseudo-element */
+  position: relative;
 }
 
 nav ul li a {
   position: relative;
-  display: inline-block; /* To apply padding and margin correctly */
+  display: inline-block;
   transition: color 0.1s linear;
   color: var(--text-active) !important;
   font-family: "Babes Neue", sans-serif;
@@ -322,10 +345,6 @@ nav ul li.active a::before {
   justify-content: center;
 }
 
-.header-top-social i:hover {
-  transform: scale(1.1);
-}
-
 .fa-moon {
   font-size: var(--primary-text-size);
   color: white;
@@ -364,7 +383,6 @@ footer {
 footer .container .items {
   width: 100%;
   display: flex;
-  /* gap: 20px; */
   justify-content: space-between;
   flex-wrap: wrap;
 }
@@ -382,20 +400,6 @@ footer .container .items .item p {
   font-weight: 400;
 }
 
-footer .container .items .item .social-networks {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-footer .container .items .item .social-networks i {
-  font-size: 18px;
-}
-
-footer .container .items .item .social-networks i:hover {
-  transform: scale(1.1);
-}
-
 footer .container .items .item .title {
   font-size: 20px;
   font-weight: 500;
@@ -409,7 +413,7 @@ footer .container .items .item ul {
   gap: 10px;
 }
 
-footer .container .items .item img {
+footer .container .items .item .footer-logo {
   margin-left: -45px;
 }
 
@@ -539,7 +543,7 @@ footer .bottom a {
     width: 130px;
   }
 
-  header .logo-center p {
+  .header .logo-center p {
     font-size: 13px;
     white-space: nowrap;
   }

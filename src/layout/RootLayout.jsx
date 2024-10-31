@@ -162,11 +162,24 @@ function RootLayout() {
           <div className="container">
             <div className="logo">
               <NavLink to="/">
-                <img width={150} src={images.logoLight} alt="logo" className="only-desktop" />
-                <img width={150} src={images.img9901} className="only-mobile" alt="logo" />
+                <img
+                  width={150}
+                  src={images.logoLight}
+                  alt="logo"
+                  className="only-desktop"
+                />
+                <img
+                  width={150}
+                  src={images.img9901}
+                  className="only-mobile"
+                  alt="logo"
+                />
               </NavLink>
             </div>
-            <div className="logo-center"> <p>Fergana Media</p> </div>
+            <div className="logo-center">
+              {" "}
+              <p>Fergana Media</p>{" "}
+            </div>
             <div className="language">
               <div className="search">
                 <i
@@ -183,40 +196,34 @@ function RootLayout() {
                       display: selectedLanguage === lang ? "none" : "block",
                     }}
                   >
-                    {t(
-                      lang === "uz-latn"
-                        ? "UZ"
-                        : lang === "en"
-                        ? "EN"
-                        : "РУ"
-                    )}
+                    {t(lang === "uz-latn" ? "UZ" : lang === "en" ? "EN" : "РУ")}
                   </span>
                 ))}
               </div>
 
-              {/* <div className="hamburger-menu">
+              <div className="hamburger-menu">
                 <i
                   className="fa-solid fa-magnifying-glass"
                   onClick={toggleSearch}
                 ></i>
                 <i onClick={toggleOpenSidebar} className="fa-solid fa-bars"></i>
-              </div> */}
+              </div>
             </div>
           </div>
         </div>
         <div className="header-middle-social">
           <div className="header-top-social">
-            <a href="">
-              <i className="fa-brands fa-instagram"></i>
+            <a href="" className="ins">
+              <img src="/images/ins.svg" alt="" />
             </a>
-            <a href="">
-              <i className="fa-brands fa-telegram"></i>
+            <a href="" className="tg">
+              <img src="/images/tg.svg" alt="" />
             </a>
-            <a href="">
-              <i className="fa-brands fa-facebook"></i>
+            <a href="" className="yt">
+              <img src="/images/yt.svg" alt="" />
             </a>
-            <a href="">
-              <i className="fab fa-youtube"></i>
+            <a href="" className="fb">
+              <img src="/images/fb.svg" alt="" />
             </a>
           </div>
           <div className="dark-mode-toggle">
@@ -254,17 +261,17 @@ function RootLayout() {
             </nav>
             <div className="header-right-items">
               <div className="header-top-social">
-                <a href="">
-                  <i className="fab fa-instagram"></i>
+                <a href="" className="ins">
+                  <img src="/images/ins.svg" alt="" />
                 </a>
-                <a href="">
-                  <i className="fab fa-telegram"></i>
+                <a href="" className="tg">
+                  <img src="/images/tg.svg" alt="" />
                 </a>
-                <a href="">
-                  <i className="fab fa-facebook"></i>
+                <a href="" className="yt">
+                  <img src="/images/yt.svg" alt="" />
                 </a>
-                <a href="">
-                  <i className="fab fa-youtube"></i>
+                <a href="" className="fb">
+                  <img src="/images/fb.svg" alt="" />
                 </a>
               </div>
               <div className="dark-mode-toggle">
@@ -285,27 +292,25 @@ function RootLayout() {
           <div className="items">
             <div className="item">
               <img
-                // width={150}
                 style={{ width: "250px", height: "50px", objectFit: "cover" }}
                 src={!isDarkMode ? images.logoDark : images.logo2}
                 alt="logo"
+                className="footer-logo"
               />
               <p>{t("Yangiliklarimiz xalq uchun")}</p>
-              <div className="social-networks">
               <div className="header-top-social">
-                <a href="">
-                  <i className="fab fa-instagram"></i>
+                <a href="" className="ins">
+                  <img src="/images/ins.svg" alt="" />
                 </a>
-                <a href="">
-                  <i className="fab fa-telegram"></i>
+                <a href="" className="tg">
+                  <img src="/images/tg.svg" alt="" />
                 </a>
-                <a href="">
-                  <i className="fab fa-facebook"></i>
+                <a href="" className="yt">
+                  <img src="/images/yt.svg" alt="" />
                 </a>
-                <a href="">
-                  <i className="fab fa-youtube"></i>
+                <a href="" className="fb">
+                  <img src="/images/fb.svg" alt="" />
                 </a>
-              </div>
               </div>
             </div>
             <div className="item">
