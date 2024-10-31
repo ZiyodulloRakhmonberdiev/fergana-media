@@ -110,7 +110,10 @@ header .header-top .container {
 }
 @media (max-width: 912px) {
   .only-desktop {
-    display: none;
+    display: none !important;
+  }
+  .header-top-social a {
+    max-height: 35px;
   }
   .only-mobile {
     display: block;

@@ -9,7 +9,7 @@ import SearchModal from "../components/searchModal/SearchModal";
 import useFetch from "./../hooks/useFetch";
 import LandingService from "../services/landing/landing";
 import ScrollToTopButton from "../components/ScrollToTopButton/ScrollToTopButton";
-import LanguageSelector from "../components/language/LanguageSelector";
+import Weather from "../components/weather/Weather";
 
 function RootLayout() {
   const [categories, setCategories] = useState([]);
@@ -24,6 +24,11 @@ function RootLayout() {
     const savedIndex = localStorage.getItem("activeIndex");
     return savedIndex !== null ? parseInt(savedIndex, 10) : 0;
   });
+  const [selectedRegion, setSelectedRegion] = useState("Farg'ona"); // Default region
+
+  const handleRegionChange = (region) => {
+    setSelectedRegion(region);
+  };
 
   useEffect(() => {
     localStorage.setItem("activeIndex", activeIndex);
@@ -156,6 +161,7 @@ function RootLayout() {
   const selectedLangData = languages?.find(
     (lang) => lang?.code === selectedLanguage
   );
+  
 
   return (
     <div className="root-layout">
@@ -183,6 +189,9 @@ function RootLayout() {
               <p>Fergana Media</p>{" "}
             </div>
             <div className="language">
+            <div className="only-desktop">
+            <Weather selectedRegion={selectedRegion} onRegionChange={handleRegionChange} />
+            </div>
               <div className="search">
                 <i
                   className="fa-solid fa-magnifying-glass"
@@ -241,6 +250,7 @@ function RootLayout() {
             </a>
           </div>
           <div className="dark-mode-toggle">
+          <Weather selectedRegion={selectedRegion} className="only-mobile" onRegionChange={handleRegionChange} />
             <i
               className="fa-solid fa-magnifying-glass"
               onClick={toggleSearch}
