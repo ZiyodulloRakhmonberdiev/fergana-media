@@ -5,18 +5,25 @@ import useFetch from "./../../hooks/useFetch";
 import LandingService from "../../services/landing/landing";
 import SkeletonContent from "./../SkeletonContent/SkeletonContent";
 import { useTranslation } from "react-i18next";
+import { Swiper, SwiperSlide } from "swiper/react";
+import SwiperCore from "swiper";
+import { Navigation, Pagination, Autoplay } from "swiper/modules";
+import "swiper/swiper-bundle.css";
+
+SwiperCore.use([Navigation, Pagination, Autoplay]);
 
 function TopNews() {
   const { data, loading, error } = useFetch(LandingService.getTopNews);
+  // const { data: news } = useFetch(LandingService.getNews);
   const { t, i18n } = useTranslation();
 
   if (loading)
     return <div style={{ marginTop: "150px" }}>{<SkeletonContent />}</div>;
   if (error) return <div>{error.message}</div>;
 
-  const topNews = data?.results?.slice(0, 2);
-  const bottomNews = data?.results?.slice(2, 5);
-  const sideNews = data?.results?.slice(5, 8);
+  const topNews = data?.results; // 4 ta yangilik
+  const bottomNews = data?.results?.slice(1, 3);
+  const sideNews = data?.results?.slice(4, 6);
 
   const formDate = (dateString) => {
     const date = new Date(dateString);
@@ -48,28 +55,42 @@ function TopNews() {
           <div className="main-news-wrapper">
             <div className="top-news">
               <section className="main-news">
-                {topNews?.map((news, index) => (
-                  <div className="top-news-card" key={index}>
-                    <div className="img-wrapper">
-                      <img
-                        src={news.image || "default_image_path.jpg"}
-                        alt={news.title}
-                      />
-                    </div>
-                    <div className="news-info">
-                      <div className="category">
-                        <span>{formDate(news.created_at)}</span>
-                      </div>
-                      <Link to={`/news/${news.id}?type=world`}>
-                        {getTitleByLanguage(news)}
+                <Swiper
+                  navigation
+                  pagination={{ clickable: true }}
+                  spaceBetween={10}
+                  slidesPerView={1}
+                  className="mySwiper"
+                  autoplay= {{
+                    delay: 4000, 
+                    disableOnInteraction: false, // Continue autoplay after interaction
+                }}
+                >
+                  {topNews?.map((news, index) => (
+                    <SwiperSlide key={index}>
+                      <Link className="top-news-card" to={`/news/${news.id}?type=world`}>
+                        <div className="img-wrapper">
+                          <img
+                            src={news.image || "default_image_path.jpg"}
+                            alt={news.title}
+                          />
+                          <div className="overlay">
+                            <div className="category">
+                              {/* <span>{formDate(news.created_at)}</span> */}
+                            </div>
+                            <Link
+                              to={`/news/${news.id}?type=world`}
+                              className="title"
+                            >
+                              {getTitleByLanguage(news)}
+                            </Link>
+                          </div>
+                        </div>
                       </Link>
-                      <p className="description">
-                        {getTitleByLanguage(news)}
-                        ...
-                      </p>
-                    </div>
-                  </div>
-                ))}
+                      <div className="news-info"></div>
+                    </SwiperSlide>
+                  ))}
+                </Swiper>
               </section>
             </div>
             <div className="bottom-news">
@@ -88,10 +109,7 @@ function TopNews() {
                     <Link to={`/news/${news.id}?type=world`}>
                       {getTitleByLanguage(news)}
                     </Link>
-                    <p className="description">
-                      {getTitleByLanguage(news)}
-                      ...
-                    </p>
+                    <p className="description">{getTitleByLanguage(news)}...</p>
                   </div>
                 </div>
               ))}
@@ -109,12 +127,12 @@ function TopNews() {
                 </div>
                 <div className="news-info">
                   <div className="category">
-                    {/* <p>{news.category}</p> */}
                     <span>{formDate(news.created_at)}</span>
                   </div>
                   <Link to={`/news/${news.id}?type=world`}>
                     {getTitleByLanguage(news)}
                   </Link>
+                  <p className="description">{getTitleByLanguage(news)}...</p>
                 </div>
               </div>
             ))}

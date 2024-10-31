@@ -31,15 +31,6 @@ function RootLayout() {
 
   const { data, loading, error } = useFetch(LandingService.getNavbar);
 
-  // const changeLanguage = async (lang) => {
-  //   try {
-  //     await i18n.changeLanguage(lang.toLowerCase());
-  //     setActiveDropdown(false);
-  //     // await fetchCategories();
-  //   } catch (error) {
-  //     console.error("Error updating language:", error);
-  //   }
-  // };
   const [selectedLanguage, setSelectedLanguage] = useState("");
 
   const changeLanguage = async (lang) => {
@@ -158,7 +149,7 @@ function RootLayout() {
 
   const languages = [
     { code: "uz-latn", label: "O'zbek", flag: "/images/uz.svg" },
-    { code: "uz-cyrl", label: "Ўзбек", flag: "/images/uz.svg" },
+    // { code: "uz-cyrl", label: "Ўзбек", flag: "/images/uz.svg" },
     { code: "en", label: "English", flag: "/images/uk.svg" },
     { code: "ru", label: "Русский", flag: "/images/ru.svg" },
   ];
@@ -205,7 +196,7 @@ function RootLayout() {
                     alt={selectedLangData?.label}
                     className="selected-flag"
                   />
-                  {selectedLangData?.label?.slice(0, 3)}
+                  {selectedLangData?.label?.slice(0, 3) || "Til"}
                 </span>
                 <i className="fa-solid fa-chevron-down"></i>
                 <div
