@@ -9,6 +9,7 @@ import SearchModal from "../components/searchModal/SearchModal";
 import useFetch from "./../hooks/useFetch";
 import LandingService from "../services/landing/landing";
 import ScrollToTopButton from "../components/ScrollToTopButton/ScrollToTopButton";
+import LanguageSelector from "../components/language/LanguageSelector";
 
 function RootLayout() {
   const [categories, setCategories] = useState([]);
@@ -155,6 +156,16 @@ function RootLayout() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [prevScrollY]);
 
+  const languages = [
+    { code: "uz-latn", label: "O'zbek", flag: "/images/uz.svg" },
+    { code: "uz-cyrl", label: "Ўзбек", flag: "/images/uz.svg" },
+    { code: "en", label: "English", flag: "/images/uk.svg" },
+    { code: "ru", label: "Русский", flag: "/images/ru.svg" },
+  ];
+  const selectedLangData = languages?.find(
+    (lang) => lang?.code === selectedLanguage
+  );
+
   return (
     <div className="root-layout">
       <header className={`header ${isHeaderVisible ? "" : "hidden"}`}>
@@ -187,27 +198,39 @@ function RootLayout() {
                   onClick={toggleSearch}
                 ></i>
               </div>
-              <div className="language-selector">
-                {["uz-latn", "en", "ru"].map((lang) => (
-                  <span
-                    key={lang}
-                    onClick={() => changeLanguage(lang)}
-                    style={{
-                      display: selectedLanguage === lang ? "none" : "block",
-                    }}
-                  >
-                    {t(lang === "uz-latn" ? "UZ" : lang === "en" ? "EN" : "РУ")}
-                  </span>
-                ))}
+              <div onClick={toggleDropdown} className="language-selector">
+                <span className="dropdown-toggle">
+                  <img
+                    src={selectedLangData?.flag}
+                    alt={selectedLangData?.label}
+                    className="selected-flag"
+                  />
+                  {selectedLangData?.label?.slice(0, 3)}
+                </span>
+                <i className="fa-solid fa-chevron-down"></i>
+                <div
+                  className={`dropdown-menu ${activeDropdown ? "active" : ""}`}
+                >
+                  {languages.map(({ code, label, flag }) => (
+                    <div
+                      key={code}
+                      onClick={() => changeLanguage(code)}
+                      className="dropdown-item"
+                    >
+                      <img src={flag} alt={label} className="flag-icon" />
+                      <span>{label}</span>
+                    </div>
+                  ))}
+                </div>
               </div>
 
-              <div className="hamburger-menu">
+              {/* <div className="hamburger-menu">
                 <i
                   className="fa-solid fa-magnifying-glass"
                   onClick={toggleSearch}
                 ></i>
                 <i onClick={toggleOpenSidebar} className="fa-solid fa-bars"></i>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
