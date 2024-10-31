@@ -232,16 +232,6 @@ header .header-top .container {
   display: block;
 }
 
-@media (max-width: 768px) {
-  .language .language-selector .dropdown-menu.active {
-    /* min-width: 100px; */
-  }
-
-  .language .language-selector .dropdown-menu {
-    /* left: 0; */
-  }
-}
-
 .language .language-selector .dropdown-menu div {
   width: 100%;
   padding: 10px;

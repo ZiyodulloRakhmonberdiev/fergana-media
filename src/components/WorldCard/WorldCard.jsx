@@ -78,7 +78,6 @@ const WorldCard = ({ data, category }) => {
         </div>
       </div>
 
-
       {Array.isArray(data?.results) && data.results.length > 0 ? (
         <Swiper
           spaceBetween={20}
@@ -97,9 +96,11 @@ const WorldCard = ({ data, category }) => {
           {data?.results.map((item) => (
             <SwiperSlide key={item.id}>
               <div className="world-card">
-                <div className="world-card-image">
-                  <img src={item.image} alt={item.title} />
-                </div>
+                <Link to={`/news/${item.id}?type=world`}>
+                  <div className="world-card-image">
+                    <img src={item.image} alt={item.title} />
+                  </div>
+                </Link>
                 <div className="world-card-content">
                   <p className="world-card-date">{formDate(item.created_at)}</p>
                   <Link to={`/news/${item.id}?type=world`}>
