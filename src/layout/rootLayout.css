@@ -636,8 +636,8 @@ footer .bottom a {
 }
 
 @media (max-width: 480px) {
-  .header-top .logo img {
-    margin-left: 0px;
+  .header-top .logo{
+    margin-left: 5px;
   }
   footer .container .items {
     flex-direction: column;

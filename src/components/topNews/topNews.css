@@ -365,4 +365,16 @@ aside {
     .bottom-news .img-wrapper {
         height: 240px !important;
     }
+    .img-wrapper {
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+        height: 320px;
+    }
+    .mySwiper{
+        height: 320px;
+    }
+    .overlay .title{
+        font-size: 18px !important;
+    }
 }

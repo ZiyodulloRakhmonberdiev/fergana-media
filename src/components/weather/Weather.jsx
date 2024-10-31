@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import './Weather.css'; 
+import './weather.css'; 
 
 const Weather = ({ selectedRegion, onRegionChange }) => {
   const [weather, setWeather] = useState(null);
